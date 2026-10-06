@@ -52,7 +52,7 @@ function renderCheckout(){
 
         <div class="field">
           <label for="phone">رقم الهاتف</label>
-          <input type="tel" id="phone" required placeholder="+213674218210">
+          <input type="tel" id="phone" required placeholder="0674218210">
         </div>
 
         <div class="field">
