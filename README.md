@@ -1,0 +1,1 @@
+# salamos-store
