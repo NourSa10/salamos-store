@@ -1,4 +1,12 @@
-
+:root{
+    --bg:#0a0a0f; --bg-2:#12121c; --card:#16161f;
+      --border:rgba(255,255,255,.08);
+        --txt:#e7e7ee; --txt-dim:#9494a8;
+          --accent:#C9A227; --accent-2:#6D28D9;
+            --grad:linear-gradient(135deg,#C9A227,#6D28D9);
+              --danger:#ff4d6d; --success:#00c48c;
+                --r:16px; --ease:cubic-bezier(.16,1,.3,1);
+                }
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
