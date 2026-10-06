@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salamo's Store — ملابس، هواتف، وعطور</title>
+<meta name="description" content="متجر Salamo's — تشكيلة عصرية من الملابس، الهواتف، والعطور الفاخرة بأسعار مناسبة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progress"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo"><span class="logo-dot"></span> Salamo's</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="shop.html">المتجر</a></li>
+        <li><a href="cart.html">السلة</a></li>
+        <li><a href="checkout.html">الدفع</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">🌙</button>
+        <a href="cart.html" class="cart-btn" aria-label="السلة">
+          🛒 <span class="cart-count">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">توصيل مجاني للطلبات فوق 5000 د.ج</span>
+        <h1>مرحباً بك في <span class="grad">Salamo's Store</span></h1>
+        <p>اكتشف تشكيلة عصرية من الملابس الأنيقة، أحدث الهواتف الذكية، والعطور الفاخرة — كل ذلك في مكان واحد.</p>
+        <div class="hero-btns">
+          <a href="shop.html" class="btn btn-primary">تسوّق الآن ←</a>
+          <a href="#featured" class="btn btn-ghost">المنتجات المميزة</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orb"></div>
+        <img src="https://picsum.photos/seed/salamo-hero/800/800" alt="Salamo's Store">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="kicker">الأكثر مبيعاً</div>
+      <h2>منتجات مميزة هذا الأسبوع</h2>
+      <p>اختيارات مميزة من ملابس، هواتف، وعطور بأفضل الأسعار.</p>
+    </div>
+    <div class="products-grid" id="featuredGrid"></div>
+    <div style="text-align:center;margin-top:50px">
+      <a href="shop.html" class="btn btn-ghost">عرض كل المنتجات →</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0">
+  <div class="container">
+    <div class="products-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <div class="reveal" style="text-align:center;padding:30px">
+        <div style="font-size:2.5rem;margin-bottom:14px">🚚</div>
+        <h3 style="margin-bottom:8px;font-size:1.1rem">توصيل سريع</h3>
+        <p style="color:var(--txt-dim);font-size:.9rem">خلال 24-48 ساعة لكل الولايات</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:30px">
+        <div style="font-size:2.5rem;margin-bottom:14px">🔒</div>
+        <h3 style="margin-bottom:8px;font-size:1.1rem">دفع آمن</h3>
+        <p style="color:var(--txt-dim);font-size:.9rem">حماية كاملة لبياناتك</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:30px">
+        <div style="font-size:2.5rem;margin-bottom:14px">↩️</div>
+        <h3 style="margin-bottom:8px;font-size:1.1rem">إرجاع مجاني</h3>
+        <p style="color:var(--txt-dim);font-size:.9rem">خلال 7 أيام بدون أسئلة</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:30px">
+        <div style="font-size:2.5rem;margin-bottom:14px">💬</div>
+        <h3 style="margin-bottom:8px;font-size:1.1rem">دعم 24/7</h3>
+        <p style="color:var(--txt-dim);font-size:.9rem">فريق جاهز لمساعدتك دائماً</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="index.html" class="logo" style="margin-bottom:14px"><span class="logo-dot"></span> Salamo's</a>
+        <p>متجرك الإلكتروني الموثوق للملابس، الهواتف، والعطور الفاخرة.</p>
+        <div class="socials">
+          <a href="#" aria-label="فيسبوك">f</a>
+          <a href="#" aria-label="إنستغرام">📷</a>
+          <a href="#" aria-label="واتساب">💬</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>التسوق</h4>
+        <ul>
+          <li><a href="shop.html">كل المنتجات</a></li>
+          <li><a href="shop.html?cat=ملابس">ملابس</a></li>
+          <li><a href="shop.html?cat=هواتف">هواتف</a></li>
+          <li><a href="shop.html?cat=عطور">عطور</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>الخدمات</h4>
+        <ul>
+          <li><a href="#">التوصيل</a></li>
+          <li><a href="#">الإرجاع</a></li>
+          <li><a href="#">الضمان</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>contact@salamos.dz</li>
+          <li>+213 XX XX XX XX</li>
+          <li>الجزائر</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Salamo's Store — جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('featuredGrid');
+    if (grid){
+      grid.innerHTML = PRODUCTS.slice(0, 6).map(productCardHTML).join('');
+      grid.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    }
+  });
+</script>
+</body>
+</html>
