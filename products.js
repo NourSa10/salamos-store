@@ -14,7 +14,7 @@ const PRODUCTS = [
     desc:'جاكيت شتوي دافئ ومقاوم للماء، بتصميم عصري يناسب جميع الإطلالات.' },
 
   { id:4, name:'هاتف ذكي حديث', price:45000, oldPrice:52000, category:'هواتف',
-    image:'https://picsum.photos/seed/phone1/400/400', rating:4.9, reviews:203, badge:'خصم',
+    image:'images/Phone1a17.jpg', rating:4.9, reviews:203, badge:'خصم',
     desc:'هاتف ذكي بشاشة AMOLED عالية الدقة، كاميرا 108MP، وبطارية تدوم طوال اليوم.' },
 
   { id:5, name:'سماعات لاسلكية', price:4500, oldPrice:null, category:'هواتف',
