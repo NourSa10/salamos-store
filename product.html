@@ -1,75 +1,54 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تفاصيل المنتج — Salamo's Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+const CURRENCY = 'د.ج';
 
-<div id="progress"></div>
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
+function img(color, icon){
+  return "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="600" height="600" fill="' + color + '"/><text x="300" y="330" font-size="200" text-anchor="middle" fill="white">' + icon + '</text></svg>'
+  );
+}
 
-<header id="header">
-  <div class="container">
-      <nav>
-            <a href="index.html" class="logo"><span class="logo-dot"></span> Salamo's</a>
-                  <ul class="nav-links" id="navLinks">
-                          <li><a href="index.html">الرئيسية</a></li>
-                                  <li><a href="shop.html">المتجر</a></li>
-                                          <li><a href="cart.html">السلة</a></li>
-                                                  <li><a href="checkout.html">الدفع</a></li>
-                                                        </ul>
-                                                              <div class="nav-actions">
-                                                                      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">🌙</button>
-                                                                              <a href="cart.html" class="cart-btn">🛒 <span class="cart-count">0</span></a>
-                                                                                      <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
-                                                                                            </div>
-                                                                                                </nav>
-                                                                                                  </div>
-                                                                                                  </header>
+const PRODUCTS = [
+  { id:1, name:'قميص رجالي كلاسيكي', price:3500, oldPrice:4500, category:'ملابس',
+    image: img('#6D28D9','👔'),
+    rating:4.6, reviews:87, badge:'خصم',
+    desc:'قميص رجالي بقصّة أنيقة، مصنوع من القطن 100%، مناسب للمناسبات والعمل اليومي.' },
 
-                                                                                                  <section style="padding-top:150px">
-                                                                                                    <div class="container">
-                                                                                                        <div class="breadcrumb">
-                                                                                                              <a href="index.html">الرئيسية</a> <span>›</span>
-                                                                                                                    <a href="shop.html">المتجر</a> <span>›</span>
-                                                                                                                          <span id="crumbName" style="color:var(--txt)"></span>
-                                                                                                                              </div>
-                                                                                                                                  <div id="productContainer"></div>
-                                                                                                                                    </div>
-                                                                                                                                    </section>
+  { id:2, name:'فستان نسائي أنيق', price:6500, oldPrice:null, category:'ملابس',
+    image: img('#C9A227','👗'),
+    rating:4.8, reviews:112, badge:'جديد',
+    desc:'فستان نسائي عصري بتصميم راقي، مثالي للسهرات والمناسبات الخاصة.' },
 
-                                                                                                                                    <footer>
-                                                                                                                                      <div class="container">
-                                                                                                                                          <div class="foot-grid">
-                                                                                                                                                <div class="foot-col">
-                                                                                                                                                        <a href="index.html" class="logo"><span class="logo-dot"></span> Salamo's</a>
-                                                                                                                                                                <p style="margin-top:12px">متجرك الموثوق للملابس، الهواتف، والعطور.</p>
-                                                                                                                                                                      </div>
-                                                                                                                                                                            <div class="foot-col"><h4>التسوق</h4><ul>
-                                                                                                                                                                                    <li><a href="shop.html">كل المنتجات</a></li>
-                                                                                                                                                                                            <li><a href="cart.html">السلة</a></li>
-                                                                                                                                                                                                    <li><a href="checkout.html">الدفع</a></li>
-                                                                                                                                                                                                          </ul></div>
-                                                                                                                                                                                                                <div class="foot-col"><h4>الخدمات</h4><ul>
-                                                                                                                                                                                                                        <li><a href="#">التوصيل</a></li>
-                                                                                                                                                                                                                                <li><a href="#">الإرجاع</a></li>
-                                                                                                                                                                                                                                      </ul></div>
-                                                                                                                                                                                                                                            <div class="foot-col"><h4>تواصل</h4><ul>
-                                                                                                                                                                                                                                                    <li>nouri.salamo10@gmail.com</li>
-                                                                                                                                                                                                                                                            <li>+213 674 218 210</li>
-                                                                                                                                                                                                                                                                  </ul></div>
-                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                          <div class="copyright">© 2025 Salamo's Store — جميع الحقوق محفوظة.</div>
-                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                            </footer>
+  { id:3, name:'جاكيت شتوي مبطن', price:8900, oldPrice:11000, category:'ملابس',
+    image: img('#1e293b','🧥'),
+    rating:4.7, reviews:65, badge:'خصم',
+    desc:'جاكيت شتوي دافئ ومقاوم للماء، بتصميم عصري يناسب جميع الإطلالات.' },
 
-                                                                                                                                                                                                                                                                            <script src="products.js"></script>
-                                                                                                                                                                                                                                                                            <script src="main.js"></script>
-                                                                                                                                                                                                                                                                            <script src="product.js"></script>
-                                                                                                                                                                                                                                                                            </body>
-                                                                                                                                                                                                                                                                            </html>
+  { id:4, name:'هاتف ذكي حديث', price:45000, oldPrice:52000, category:'هواتف',
+    image: img('#2563eb','📱'),
+    rating:4.9, reviews:203, badge:'خصم',
+    desc:'هاتف ذكي بشاشة AMOLED عالية الدقة، كاميرا 108MP، وبطارية تدوم طوال اليوم.' },
+
+  { id:5, name:'سماعات لاسلكية', price:4500, oldPrice:null, category:'هواتف',
+    image: img('#059669','🎧'),
+    rating:4.7, reviews:145, badge:'جديد',
+    desc:'سماعات بلوتوث بعزل ضجيج نشط، صوت نقي، وبطارية تدوم حتى 30 ساعة.' },
+
+  { id:6, name:'شاحن سريع 65W', price:1800, oldPrice:2400, category:'هواتف',
+    image: img('#dc2626','🔌'),
+    rating:4.5, reviews:98, badge:'خصم',
+    desc:'شاحن سريع بقوة 65 واط، يشحن هاتفك بالكامل في أقل من ساعة.' },
+
+  { id:7, name:'عطر رجالي فخم', price:7500, oldPrice:9500, category:'عطور',
+    image: img('#7c3aed','💎'),
+    rating:4.8, reviews:156, badge:'خصم',
+    desc:'عطر رجالي شرقي فخم، برائحة تدوم طويلاً وتترك أثراً لا يُنسى.' },
+
+  { id:8, name:'عطر نسائي زهري', price:8200, oldPrice:null, category:'عطور',
+    image: img('#ec4899','🌸'),
+    rating:4.9, reviews:178, badge:'جديد',
+    desc:'عطر نسائي بنفحات زهرية راقية، مثالي للإطلالات اليومية والمناسبات.' },
+
+  { id:9, name:'عطر مسك أبيض', price:5500, oldPrice:6800, category:'عطور',
+    image: img('#f59e0b','🕌'),
+    rating:4.6, reviews:124, badge:'خصم',
+    desc:'عطر مسك أبيض ناعم بثبات عالٍ، مناسب للرجال والنساء.' }
+];
