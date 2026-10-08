@@ -162,3 +162,71 @@ function updateThemeBtn(btn, theme){
   btn.textContent = theme === 'dark' ? '🌙' : '☀️';
   btn.title = theme === 'dark' ? 'التبديل للوضع النهاري' : 'التبديل للوضع الليلي';
 }
+
+
+// ============ نافذة الإعدادات ============
+function openSettings(){
+  const overlay = document.getElementById('settingsOverlay');
+  if (overlay){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateThemeOptions();
+  }
+}
+
+function closeSettings(){
+  const overlay = document.getElementById('settingsOverlay');
+  if (overlay){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function updateThemeOptions(){
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  document.querySelectorAll('.theme-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === current);
+  });
+}
+
+// إعداد مستمعي الأحداث بعد تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  // زر الإعدادات
+  const settingsBtn = document.getElementById('settingsBtn');
+  if (settingsBtn){
+    settingsBtn.addEventListener('click', openSettings);
+  }
+
+  // زر الإغلاق
+  const closeBtn = document.querySelector('.settings-close');
+  if (closeBtn){
+    closeBtn.addEventListener('click', closeSettings);
+  }
+
+  // الضغط على الخلفية يغلق النافذة
+  const overlay = document.getElementById('settingsOverlay');
+  if (overlay){
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeSettings();
+    });
+  }
+
+  // زر Escape يغلق النافذة
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSettings();
+  });
+
+  // خيارات الوضع
+  document.querySelectorAll('.theme-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newTheme = btn.dataset.theme;
+      applyTheme(newTheme);
+      localStorage.setItem('salamos_theme', newTheme);
+      updateThemeOptions();
+
+      // تحديث أي زر تبديل قديم إن وُجد
+      const oldBtn = document.getElementById('themeToggle');
+      if (oldBtn) updateThemeBtn(oldBtn, newTheme);
+    });
+  });
+});
