@@ -175,14 +175,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // تغيير اللغة (سنضيفه لاحقاً)
+    // ============ الترجمة ============
+  function applyLang(lang){
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    document.querySelectorAll('[data-ar]').forEach(el => {
+      const txt = el.getAttribute('data-' + lang);
+      if (txt) el.textContent = txt;
+    });
+
+    document.querySelectorAll('[data-ar-placeholder]').forEach(el => {
+      const txt = el.getAttribute('data-' + lang + '-placeholder');
+      if (txt) el.placeholder = txt;
+    });
+  }
+
+  const savedLang = localStorage.getItem('salamos_lang') || 'ar';
+  applyLang(savedLang);
+
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
       localStorage.setItem('salamos_lang', lang);
-      // مؤقتاً
+      applyLang(lang);
       if (settingsMenu) settingsMenu.classList.remove('open');
     });
   });
+  // ===================================
 
   // زر الوضع الليلي
   document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
