@@ -605,3 +605,17 @@ footer{
 }
 
 .nav-actions{position:relative}
+/* ضبط التذييل */
+.foot-col p,
+.foot-col li,
+.foot-col a{
+  word-break:break-word;
+  overflow-wrap:anywhere;
+  font-size:.85rem;
+}
+.foot-col li{
+  margin-bottom:6px;
+}
+.foot-col h4{
+  white-space:nowrap;
+}
