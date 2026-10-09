@@ -158,6 +158,44 @@ function applyTheme(theme){
   document.documentElement.setAttribute('data-theme', theme);
 }
 
+/* ============ قائمة الإعدادات ============ */
+document.addEventListener('DOMContentLoaded', () => {
+  const settingsBtn = document.getElementById('settingsBtn');
+  const settingsMenu = document.getElementById('settingsMenu');
+
+  if (settingsBtn && settingsMenu){
+    settingsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      settingsMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', () => {
+      settingsMenu.classList.remove('open');
+    });
+  }
+
+  // تغيير اللغة (سنضيفه لاحقاً)
+  document.querySelectorAll('[data-lang]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      localStorage.setItem('salamos_lang', lang);
+      // مؤقتاً
+      if (settingsMenu) settingsMenu.classList.remove('open');
+    });
+  });
+
+  // زر الوضع الليلي
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('salamos_theme', newTheme);
+      btn.textContent = newTheme === 'dark' ? '🌙 الوضع الليلي' : '☀️ الوضع النهاري';
+      if (settingsMenu) settingsMenu.classList.remove('open');
+    });
+  });
+});
 function updateThemeBtn(btn, theme){
   btn.textContent = theme === 'dark' ? '🌙' : '☀️';
   btn.title = theme === 'dark' ? 'التبديل للوضع النهاري' : 'التبديل للوضع الليلي';
